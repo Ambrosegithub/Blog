@@ -1,24 +1,41 @@
-# README
+# database_based_on_diagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a Blog app in development with rails and PostgreSQL.
 
-Things you may want to cover:
+# ER diagram
 
-* Ruby version
+<img src="./public/blog.png"></img>
 
-* System dependencies
+## Getting Started
 
-* Configuration
+Coming Soon
 
-* Database creation
+## Author
 
-* Database initialization
+👤 **Rich**
 
-* How to run the test suite
+- GitHub: [@assadounto](https://github.com/assadounto)
+- Twitter: [@adukyerer](https://twitter.com/adukyerer)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/adu-kyere)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
