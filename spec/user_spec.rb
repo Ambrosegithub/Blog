@@ -9,12 +9,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'Posts Counter attribute should be an integer number' do
-    subject.posts_counter = 'some random string'
+    subject.postCounter = 'some random string'
     expect(subject).to_not be_valid
   end
 
   it 'Posts Counter attribute should be greater or equal to zero' do
-    subject.posts_counter = -4
+    subject.postCounter = -4
     expect(subject).to_not be_valid
   end
 end
