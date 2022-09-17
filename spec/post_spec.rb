@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe Post, type: :model do
   subject { described_class.new(title: 'Post One', text: 'This is the post one') }
 
