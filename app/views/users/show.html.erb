@@ -1,0 +1,9 @@
+<h2><%= @user.name%></h2>
+<p><%= @user.bio %></p>
+<div>
+<%@user.posts.each do |post|%>
+    <%=post.title %>
+    <%=post.text%>
+    <%=link_to 'see sll posts' ,user_posts_path(@user)%>
+<% end %>
+</div>

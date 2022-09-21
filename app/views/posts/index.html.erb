@@ -1,0 +1,20 @@
+<div>
+
+Welcom user 
+<%@user.posts.each do |post|%>
+<h2>
+        <%= post.title%>
+        <%=post.id%>
+       
+      </h2>
+<%=link_to user_post_path(post.id)%>
+<% end %>
+<%@user.comments.each do |comment|%>
+<h2>
+        <%= comment.text%>
+       
+      </h2>
+
+<% end %>
+
+<div>
