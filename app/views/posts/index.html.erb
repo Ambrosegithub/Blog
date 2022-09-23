@@ -7,14 +7,14 @@ Welcom user
         <%=post.id%>
        
       </h2>
-<%=link_to user_post_path(post.id)%>
+<%=link_to 'see full' ,user_post_path(@user,post)%>
 <% end %>
 <%@user.comments.each do |comment|%>
 <h2>
         <%= comment.text%>
        
       </h2>
-
+      
 <% end %>
 
 <div>

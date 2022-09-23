@@ -4,6 +4,7 @@
 <%@user.posts.each do |post|%>
     <%=post.title %>
     <%=post.text%>
-    <%=link_to 'see sll posts' ,user_posts_path(@user)%>
+   <%=link_to 'see full' ,user_post_path(@user,post)%>
 <% end %>
+ <%=link_to 'see all posts' ,user_posts_path(@user)%>
 </div>
