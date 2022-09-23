@@ -1,15 +1,14 @@
 .info-cont {
-display: flex;
-flex-direction: column;
-margin-bottom: 100px;
-
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
 }
 
-.d{
-   margin-top: 50px;
+.d {
+  margin-top: 50px;
 }
 
 :link {
-    text-decoration: none;
-    display: flex;
+  text-decoration: none;
+  display: flex;
 }
