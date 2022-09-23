@@ -1,7 +1,15 @@
 <div>
 
 <h2>
-        <%= @post.text%>
+        <%= @post.title%>
       </h2> 
-
+<%= @post.text%>
+   comments: <%=@post.comments_counter %>
+    likes: <%=@post.likes_counter%>
+ <%@post.comments.each do |comment|%>
+   <div>
+   <%=comment.user.name%>
+    <%=comment.text%>
+   </div> 
+    <%end%>
 </div>
