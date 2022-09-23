@@ -1,0 +1,13 @@
+<%=link_to user_post_path(@user,post)  do %>
+    <%=post.title %>
+    <%=post.text%>
+   comments: <%=post.comments_counter %>
+    likes: <%=post.likes_counter%>
+ <%post.comments.each do |comment|%>
+   <div>
+   <%=comment.user.name%>
+    <%=comment.text%>
+   </div> 
+    <%end%>
+<% end %>
+   
