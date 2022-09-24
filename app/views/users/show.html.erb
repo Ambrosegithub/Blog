@@ -1,3 +1,7 @@
 <%= render @user %>
+<div class="bio-cont">
+<h2>Bio</h2>
+<p class="bio"><%=@user.bio%></p>
+</div>
 <%= render @user.posts%>
- <%=link_to 'see all posts' ,user_posts_path(@user)%>
+ <button class="button"><%=link_to 'see all posts' ,user_posts_path(@user)%></button>

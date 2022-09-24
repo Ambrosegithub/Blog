@@ -1,15 +1,17 @@
-<div>
+<div class="full-post-cont">
+  <div class='full-post-cont-head'>
+   <div><%= @post.title%> by <%= @post.user.name%></div>
+   <div class='comment-likes'> comments: <%=@post.comments.size %> likes: <%=@post.likes_counter%></div>
+  </div>
+  <p><%= @post.text%></p>
+</div>
 
-<h2>
-        <%= @post.title%>
-      </h2> 
-<%= @post.text%>
-   comments: <%=@post.comments_counter %>
-    likes: <%=@post.likes_counter%>
- <%@post.comments.each do |comment|%>
+<div class="comments">
+  <%@post.comments.each do |comment|%>
    <div>
-   <%=comment.user.name%>
-    <%=comment.text%>
+   <%=comment.user.name%>: <%=comment.text%>
    </div> 
     <%end%>
-</div>
+ </div>
+
+

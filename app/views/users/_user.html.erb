@@ -1,12 +1,14 @@
-<div class="d">
+<div class="users-cont">
   <%= link_to "/users/#{user.id}" do %>
+  <div class='user-cont'>
         <div class="img-cont">
            <img class="image" src="<%= user.photo %>" alt="Profile picture">
         </div>
 
         <div class="info-cont">
-           <div><%= user.name %></div>
-           <div> <%= pluralize(user.postCounter, 'Post') %></div>
-        <div>
+           <div class="name-cont"><%= user.name %></div>
+           <div class="post-cont"> Number of posts: <%= user.postCounter%></div>
+        </div>
+        </div>
   <% end %>
-</div>
+  </div>

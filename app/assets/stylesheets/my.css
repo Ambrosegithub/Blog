@@ -1,14 +1,58 @@
-.info-cont {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 100px;
-}
-
-.d {
-  margin-top: 50px;
-}
 
 :link {
   text-decoration: none;
+  display: flex;
+}
+
+.user-cont {
+  display: flex;
+}
+
+.users-cont {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.img-cont {
+  width: 100px;
+  height: 100px;
+  margin-right: 1rem;
+  border: 2px solid rgb(77, 73, 73);
+}
+
+.info-cont {
+  width: 400px;
+  height: 100px;
+  border: 2px solid rgb(77, 73, 73);
+  color: rgb(49, 44, 44);
+}
+
+.post-cont {
+  margin-left: 250px;
+}
+
+.name-cont {
+  font-size: 2rem;
+  padding: 1.2rem;
+}
+
+.bio-cont,
+.posts-cont,
+.full-post-cont,
+.comments {
+  width: 80%;
+  margin: auto;
+  border: 2px solid rgb(77, 73, 73);
+  margin-bottom: 0.5rem;
+}
+
+.comment-likes {
+  max-width: 150px;
+  margin-left: auto;
+}
+
+.full-post-cont-head {
   display: flex;
 }
