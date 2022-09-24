@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  def recent_comments
+  def current_user
     User.first
   end
 end
