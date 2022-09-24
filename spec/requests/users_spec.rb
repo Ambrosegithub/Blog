@@ -19,23 +19,3 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
-
-RSpec.describe 'Users', type: :request do
-  describe 'GET /show' do
-    before(:each) do
-      get '/users/7'
-    end
-
-    it 'renders correct placeholder text ' do
-      expect(response.body).to include('Hi, this is the profile of a user')
-    end
-
-    it 'renders correct template' do
-      expect(response).to render_template(:show)
-    end
-
-    it "'http request is successfull" do
-      expect(response).to have_http_status(:success)
-    end
-  end
-end
