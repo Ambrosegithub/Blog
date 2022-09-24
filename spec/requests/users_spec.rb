@@ -12,4 +12,16 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('users/index')
     end
   end
+
+  describe 'GET /show' do
+    before(:example) { get "/users/7" }
+
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it "renders 'users' template" do
+      expect(response).to render_template('users/show')
+    end
+  end
 end
