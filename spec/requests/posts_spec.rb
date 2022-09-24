@@ -1,20 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  subject { described_class.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
+RSpec.describe 'Users', type: :request do
+  describe 'GET /index' do
+    before(:example) { get users_path }
 
-  it 'Name attribute should be present' do
-    subject.name = nil
-    expect(subject).to_not be_valid
-  end
+    it 'is a success' do
+      expect(response).to have_http_status(:ok)
+    end
 
-  it 'Posts Counter attribute should be an integer number' do
-    subject.postCounter = 'some random string'
-    expect(subject).to_not be_valid
-  end
-
-  it 'Posts Counter attribute should be greater or equal to zero' do
-    subject.postCounter = -4
-    expect(subject).to_not be_valid
+    it "renders 'users' template" do
+      expect(response).to render_template('users/index')
+    end
   end
 end
