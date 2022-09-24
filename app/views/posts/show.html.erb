@@ -4,14 +4,19 @@
    <div class='comment-likes'> comments: <%=@post.comments.size %> likes: <%=@post.likes_counter%></div>
   </div>
   <p><%= @post.text%></p>
+  <div class="likes">
+          <%= render partial: 'likes/form', locals: { post_id: @post.id } %>
+        </div>
 </div>
-
 <div class="comments">
   <%@post.comments.each do |comment|%>
    <div>
    <%=comment.user.name%>: <%=comment.text%>
    </div> 
     <%end%>
+     <div>
+    <%= render partial: 'comments/form', locals: { post: @post }  %>
+  </div>
  </div>
 
 

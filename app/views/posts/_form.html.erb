@@ -1,0 +1,14 @@
+<% input_classes = 'rounded' %>
+<%= form_with model: Post, class: 'flex' do |form| %>
+  <div>
+    <%= form.text_field :title, placeholder: 'Title', class: input_classes %>
+  </div>
+  <div>
+    <%= form.text_area :text, placeholder: 'Post description...', class: input_classes %>
+  </div>
+  <div>
+    <button type="submit" class="submit">
+      Register
+    </button>
+  </div>
+<% end %>
