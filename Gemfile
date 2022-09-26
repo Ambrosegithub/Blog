@@ -41,7 +41,7 @@ gem 'tzinfo-data', '~> 1.2021', '>= 1.2021.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
+gem 'rails-controller-testing'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -63,10 +63,14 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
+gem 'ffi'
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end

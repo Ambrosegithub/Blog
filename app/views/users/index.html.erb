@@ -1,0 +1,12 @@
+<div>
+
+Welcom user 
+<%@users.each do |user|%>
+<h2>
+     <%= link_to user.name,user %>
+       
+      </h2> 
+      <%=user.posts.size%>
+<% end %>
+
+<div>
