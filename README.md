@@ -6,9 +6,14 @@ This a Blog app in development with rails and PostgreSQL.
 
 <img src="./public/blog.png"></img>
 
-## Getting Started
 
-Coming Soon
+## Setup
+
+If you wish to run the project locally, please do the following:
+
+- Clone the repository to your local machine. - **`git clone git@github.com:assadounto/blog.git`**
+- Run rails s for server
+- Run rspec for tests
 
 ## Author
 

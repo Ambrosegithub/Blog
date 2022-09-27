@@ -12,9 +12,4 @@ RSpec.describe User, type: :model do
     subject.postCounter = 'some random string'
     expect(subject).to_not be_valid
   end
-
-  it 'Posts Counter attribute should be greater or equal to zero' do
-    subject.postCounter = -4
-    expect(subject).to_not be_valid
-  end
 end
