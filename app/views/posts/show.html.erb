@@ -12,11 +12,16 @@
   <%@post.comments.each do |comment|%>
    <div>
    <%=comment.user.name%>: <%=comment.text%>
+   <%=button_to "del",comment_path(comment), method: :delete  %>
    </div> 
     <%end%>
      <div>
     <%= render partial: 'comments/form', locals: { post: @post }  %>
   </div>
+  <ul>
+  <li><%= link_to "Edit Post", edit_post_path(@post) %></li>
+  <li><%= button_to "del", post_path(@post), method: :delete  %></li>
+</ul>
  </div>
 
 

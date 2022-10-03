@@ -5,3 +5,4 @@
 </div>
 <%= render @user.posts%>
  <button class="button"><%=link_to 'see all posts' ,user_posts_path(@user)%></button>
+ <button class="button"><%=link_to 'Add new post' ,new_post_path %></button>
