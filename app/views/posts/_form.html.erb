@@ -1,5 +1,5 @@
 <% input_classes = 'rounded' %>
-<%= form_with model: Post, class: 'flex' do |form| %>
+<%= form_with model: post, class: 'flex' do |form| %>
   <div>
     <%= form.text_field :title, placeholder: 'Title', class: input_classes %>
   </div>
@@ -8,7 +8,7 @@
   </div>
   <div>
     <button type="submit" class="submit">
-      Register
+      Add Post
     </button>
   </div>
 <% end %>
