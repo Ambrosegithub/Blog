@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
-  validates :postCounter, presence: true, numericality: { only_integer: true }
+  validates :post_counter, presence: true, numericality: { only_integer: true }
 
   has_many :comments
   has_many :posts, foreign_key: 'user_id'
