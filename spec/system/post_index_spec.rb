@@ -54,17 +54,17 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_content('First post by Rich')
     end
 
-    # it 'shows how many comments and likes a post has' do
-    #   visit user_posts_path(@user1)
-    #   expect(page).to have_content('comments: 2 likes: 1')
-    #   expect(page).to have_content('comments: 1 likes: 1')
-    # end
+    it 'shows how many comments and likes a post has' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('comments: 2 likes: 1')
+      expect(page).to have_content('comments: 1 likes: 1')
+    end
 
-    # it 'shows comments in a post' do
-    #   visit user_posts_path(@user1)
-    #   expect(page).to have_content('Hi everytone, nice to meet you!')
-    #   expect(page).to have_content('Hello loves, welcome!!')
-    # end
+    it 'shows comments in a post' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('Hi everytone, nice to meet you!')
+      expect(page).to have_content('Hello loves, welcome!!')
+    end
 
     it 'it redirects me to a posts show page when the post is clicked' do
       visit user_posts_path(@user1)
@@ -78,15 +78,15 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_current_path(user_post_path(@user1, @post2))
     end
 
-    # it 'displays the post title' do
-    #     visit user_post_path(@user1, @post1)
-    #     expect(page).to have_content('First post')
-    #   end
+    it 'displays the post title' do
+        visit user_post_path(@user1, @post1)
+        expect(page).to have_content('First post')
+      end
 
-    #   it 'displays the post title and user who wrote the post' do
-    #     visit user_post_path(@user1, @post1)
-    #     expect(page).to have_content('First post by Rich')
-    #   end
+      it 'displays the post title and user who wrote the post' do
+        visit user_post_path(@user1, @post1)
+        expect(page).to have_content('First post by Rich')
+      end
 
     it 'shows other parts of the post body' do
       visit user_post_path(@user1, @post1)
