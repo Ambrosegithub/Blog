@@ -79,14 +79,14 @@ RSpec.describe 'Post Index', type: :feature do
     end
 
     it 'displays the post title' do
-        visit user_post_path(@user1, @post1)
-        expect(page).to have_content('First post')
-      end
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('First post')
+    end
 
-      it 'displays the post title and user who wrote the post' do
-        visit user_post_path(@user1, @post1)
-        expect(page).to have_content('First post by Rich')
-      end
+    it 'displays the post title and user who wrote the post' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('First post by Rich')
+    end
 
     it 'shows other parts of the post body' do
       visit user_post_path(@user1, @post1)
