@@ -26,12 +26,12 @@ RSpec.describe 'User Show', type: :feature do
     )
   end
 
-  # describe 'a user show page' do
-  #   it 'displays the users profile photo' do
-  #     visit user_path(@user1)
-  #     expect(page).to have_css("img[src*='http://product.com']")
-  #   end
-  # end
+  describe 'a user show page' do
+    it 'displays the users profile photo' do
+      visit user_path(@user1)
+      expect(page).to have_css("img[src*='http://product.com']")
+    end
+  end
 
   it 'displays the user name' do
     visit user_path(@user1)
@@ -71,11 +71,11 @@ RSpec.describe 'User Show', type: :feature do
     expect(page).to have_current_path(user_path(@user1))
   end
 
-  # it 'click a users post, it redirects to the posts show page' do
-  #   visit user_path(@user1)
-  #   click_link 'First post'
-  #   expect(page).to have_current_path(user_post_path(@user1, @post1))
-  # end
+  it 'click a users post, it redirects to the posts show page' do
+    visit user_path(@user1)
+    click_link 'First post'
+    expect(page).to have_current_path(user_post_path(@user1, @post1))
+  end
 
   it 'click a users post, it redirects to the posts show page' do
     visit user_path(@user1)
