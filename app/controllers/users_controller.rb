@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
-    @users = User.include(:comments,:post).all
+    @users = User.include(:comments, :post).all
   end
 
   def show
