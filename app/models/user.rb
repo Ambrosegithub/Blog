@@ -13,7 +13,6 @@ class User < ApplicationRecord
   def recent_comments
     comments.last(3)
   end
-
   def admin?
     self.role == 'admin'
   end
