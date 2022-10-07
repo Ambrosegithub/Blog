@@ -5,12 +5,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments,:user).find(params[:id])
+    @post = Post.includes(:comments, :user).find(params[:id])
   end
 
   def new
-    @post=Post.new
-   end
+    @post = Post.new
+  end
 
   def create
     @post = Post.new post_params
@@ -33,17 +33,19 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to user_post_path(current_user,@post)
+      redirect_to user_post_path(current_user, @post)
     else
       render :edit, status: :unprocessable_entity
     end
   end
+
   def destroy
-    @post= Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
 
     redirect_to root_path, status: :see_other
   end
+
   private
 
   def post_params
