@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user=User.new
-   end
+    @user = User.new
+  end
 
   def create
     @user = User.new user_params
@@ -24,20 +24,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
+
   def update
     respond_to? do |format|
-    if current_user.update(user_params)
-      format.html { redirect_to user_path(current_user), notice: 'User was successfully updated.' }
-    else
-      render :edit, status: :unprocessable_entity
+      if current_user.update(user_params)
+        format.html { redirect_to user_path(current_user), notice: 'User was successfully updated.' }
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
   end
-end
-private
+
+  private
+
   def user_params
-    params.require(:user).permit(:name,:surname,:email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :surname, :email, :password, :password_confirmation)
   end
 end

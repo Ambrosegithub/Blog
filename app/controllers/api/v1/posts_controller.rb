@@ -8,10 +8,11 @@ module Api
           render json: @posts
         end
 
-        private
-        def fetch_user
-            @user = User.find(params[:user_id])
-            end
+      private
+
+      def fetch_user
+        @user = User.find(params[:user_id])
       end
     end
   end
+end
