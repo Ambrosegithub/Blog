@@ -6,11 +6,13 @@ module Api
 
       def create
       user = User.find_by(name: params[:name])
+      if user&.valid_password?(params[:password])
       token= AuthenticationTokenService.call(user.id)
-
       render json: {token: token}, status: :created
+      else 
+        render json: {error: 'unauthorized'}, status: :unauthorized
       end
-
+    end
 
      private
      def parameter_missing(e)
