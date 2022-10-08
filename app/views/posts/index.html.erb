@@ -1,20 +1,4 @@
 <div>
-
-Welcom user 
-<%@user.posts.each do |post|%>
-<h2>
-        <%= post.title%>
-        <%=post.id%>
-       
-      </h2>
-<%=link_to 'see full' ,user_post_path(@user,post)%>
-<% end %>
-<%@user.comments.each do |comment|%>
-<h2>
-        <%= comment.text%>
-       
-      </h2>
-      
-<% end %>
-
+<%=render @user %>
+<%=render @user.posts%>
 <div>

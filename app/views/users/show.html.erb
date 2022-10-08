@@ -1,10 +1,9 @@
-<h2><%= @user.name%></h2>
-<p><%= @user.bio %></p>
-<div>
-<%@user.posts.each do |post|%>
-    <%=post.title %>
-    <%=post.text%>
-   <%=link_to 'see full' ,user_post_path(@user,post)%>
-<% end %>
- <%=link_to 'see all posts' ,user_posts_path(@user)%>
+<%= render @user %>
+
+<div class="bio-cont">
+<h2>Bio</h2>
+<p class="bio"><%=@user.bio%></p>
 </div>
+<%= render @user.posts%>
+ <button class="button"><%=link_to 'see all posts' ,user_posts_path(@user)%></button>
+ <button class="button"><%=link_to 'Add new post' ,new_post_path %></button>

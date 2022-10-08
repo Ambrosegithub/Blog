@@ -1,7 +1,29 @@
-<div>
-
-<h2>
-        <%= @post.text%>
-      </h2> 
-
+<div class="full-post-cont">
+  <div class='full-post-cont-head'>
+   <div><%= @post.title%> by <%= @post.user.name%></div>
+   <div class='comment-likes'> comments: <%=@post.comments.size %> likes: <%=@post.likes_counter%></div>
+  </div>
+  <p><%= @post.text%></p>
+  <div class="likes">
+          <%= render partial: 'likes/form', locals: { post_id: @post.id } %>
+        </div>
 </div>
+<div class="comments">
+  <%@post.comments.each do |comment|%>
+   <div>
+   <%=comment.user.name%>: <%=comment.text%>
+   <%=button_to "del",comment_path(comment), method: :delete  %>
+   </div> 
+    <%end%>
+     <div>
+    <%= render partial: 'comments/form', locals: { post: @post }  %>
+  </div>
+  <ul>
+  <% if @current_user&.admin?%>
+  <li><%= link_to "Edit Post", edit_post_path(@post) %></li>
+  <li><%= button_to "del", post_path(@post), method: :delete  %></li>
+  <%end%>
+</ul>
+ </div>
+
+

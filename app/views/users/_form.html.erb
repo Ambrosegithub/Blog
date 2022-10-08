@@ -1,0 +1,33 @@
+<div>fkkkkkkkk</div>
+<% input_classes = 'rounded' %>
+<%= form_with( model: @user, local:true) do |form| %>
+  <div>
+   <%= form.label :name %><br>
+    <%= form.text_field :name, placeholder: 'Name', class: input_classes %>
+  </div>
+  <div>
+   <%= form.label :surname %><br>
+    <%= form.text_area :surname, placeholder: 'surname', class: input_classes %>
+  </div>
+   <%= form.label :email %><br>
+    <%= form.text_area :email, placeholder: 'email', class: input_classes %>
+  </div>
+
+   <div class="field">
+    <%= form.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= form.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  <div>
+    <button type="submit" class="submit">
+      add person
+    </button>
+  </div>
+<% end %>

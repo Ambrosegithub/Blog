@@ -10,6 +10,33 @@
   </head>
 
   <body>
+  
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+ <ul class="navbar-nav mr-auto">
+    <p class="navbar-text float-right">
+<% if user_signed_in? %>
+  Hey there <strong><%= current_user.name%></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+  <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+
+</p>
+  </ul>
+  <nav>
+        <% if @current_user&.admin? %>
+   <div><%= link_to 'Go to Admin panel', users_path %></div>
+   <div><%= link_to 'Go to User panel', current_user %></div>
+        <% end %>
+      </nav>
     <%= yield %>
   </body>
+  
 </html>

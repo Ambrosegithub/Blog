@@ -1,0 +1,14 @@
+<div class="users-cont">
+  <%= link_to "/users/#{user.id}" do %>
+  <div class='user-cont'>
+        <div class="img-cont">
+           <img class="image" src="<%= user.photo %>" alt="Profile picture">
+        </div>
+
+        <div class="info-cont">
+           <div class="name-cont"><%= user.name %></div>
+           <div class="post-cont"> Number of posts: <%= user.post_counter%></div>
+        </div>
+        </div>
+  <% end %>
+  </div>
