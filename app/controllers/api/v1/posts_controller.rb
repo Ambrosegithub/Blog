@@ -2,7 +2,7 @@ module Api
     module V1
       class  Api::V1::PostsController < AuthenticationController
         before_action :fetch_user, only: [:index,:show]
-        before_action  :authorize!
+        before_action  :authorize_request
         def index
           @posts = @user ? @user.posts.includes(:comments,:user) : Post.includes(:comments,:user) #n+1 fix
           render json: @posts

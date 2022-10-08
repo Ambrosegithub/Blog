@@ -1,9 +1,8 @@
 module Api
   module V1
-    class AuthenticationController < ActionController::Base
-      protect_from_forgery with: :null_session
+    class AuthenticationController < ApiController
      rescue_from ActionController::ParameterMissing, with: :parameter_missing
-
+      before_action :authorize_request , except: [:authenticate_request]
       def create
       user = User.find_by(name: params[:name])
       if user&.valid_password?(params[:password])
