@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,17 +7,18 @@ class User < ApplicationRecord
   validates :post_counter, presence: true, numericality: { only_integer: true }
   before_save :assign_role
   # has_secure_password
-  has_many :comments,dependent: :destroy
-  has_many :posts, foreign_key: 'user_id',dependent: :destroy
-  has_many :likes, foreign_key: 'user_id',dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :posts, foreign_key: 'user_id', dependent: :destroy
+  has_many :likes, foreign_key: 'user_id', dependent: :destroy
   def recent_comments
     comments.last(3)
   end
+
   def admin?
-    self.role == 'admin'
+    role == 'admin'
   end
 
   def assign_role
-    self.role = 'user' if self.role.nil?
+    self.role = 'user' if role.nil?
   end
 end
